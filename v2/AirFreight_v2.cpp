@@ -1,5 +1,5 @@
-// Christopher Schatz & Serhat Sural
-// AIRFreight: Programm zum Überprüfen von Seriennummern bei Luftfracht
+// Chris1934
+// AIRFreight: Program to check air freight
 // Version 2
 
 #define VERSION 2
