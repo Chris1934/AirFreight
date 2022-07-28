@@ -1,4 +1,4 @@
-# AirFreight
+![alt text](Logo.png "AirFreight Logo") # AirFreight
 A tool to check Serial Numbers in Packages (e.g. air freight)
 
 ###### Developed for a company to check their icoming freight.
