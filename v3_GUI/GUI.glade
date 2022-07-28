@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 
+
+Copyright (C) 
+
+This file is part of AIRFreight.
+
+AIRFreight is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+AIRFreight is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with AIRFreight.  If not, see <http://www.gnu.org/licenses/>.
+
+Author: Christopher Schatz, Serhat Sural
+
+-->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <!-- interface-license-type lgplv3 -->
+  <!-- interface-name AIRFreight -->
+  <!-- interface-description Programm zum Einscannen und Verwalten von Luftfracht -->
+  <!-- interface-authors Christopher Schatz, Serhat Sural -->
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">Bilder\ok.png</property>
+  </object>
+  <object class="GtkWindow" id="window1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="has-focus">True</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center-always</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="icon">Logo.png</property>
+    <property name="type-hint">dialog</property>
+    <property name="urgency-hint">True</property>
+    <property name="accept-focus">False</property>
+    <signal name="destroy" handler="destroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="wlkm">
+        <property name="width-request">0</property>
+        <property name="height-request">0</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="border-width">0</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="wlkmHeader">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="title" translatable="yes">Willkommen zu AIRFreight</property>
+            <property name="subtitle" translatable="yes">Programm zum Einscannen von Luftfracht</property>
+            <property name="spacing">28</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFileChooserButton" id="wlkmAddFile">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Hier wählst du eine Datei aus</property>
+            <property name="create-folders">False</property>
+            <property name="title" translatable="yes">Tabelle auswählen</property>
+            <signal name="file-set" handler="wlkm_file_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="wlkmBtn">
+            <property name="label" translatable="yes">Diese Tabelle auswählen</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image1</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="on_wlkmBtn_clicked" swapped="no"/>
+            <signal name="enter" handler="on_wlkmBtn_enter" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="wlkmLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">test</property>
+            <property name="use-markup">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">Bilder\plus.png</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">Bilder\packet.png</property>
+  </object>
+  <object class="GtkWindow" id="window2">
+    <property name="can-focus">True</property>
+    <property name="title" translatable="yes">Eingabe - AIRFreight</property>
+    <property name="window-position">center-always</property>
+    <property name="icon">Logo.png</property>
+    <property name="type-hint">desktop</property>
+    <property name="accept-focus">False</property>
+    <property name="deletable">False</property>
+    <signal name="destroy" handler="destroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="main_w">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="mainHeader">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="title" translatable="yes">Seriennummern eintragen</property>
+            <property name="subtitle" translatable="yes">Mit Tastatur oder Scanner</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="mainEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Eingabefeld</property>
+            <property name="input-hints">GTK_INPUT_HINT_NO_SPELLCHECK | GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="mainBtnBundle">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">29</property>
+            <property name="layout-style">expand</property>
+            <child>
+              <object class="GtkButton" id="mainBtnBundleDevice">
+                <property name="label" translatable="yes">Seriennummer eintragen</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="image">image2</property>
+                <property name="always-show-image">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="mainBtnBundlePacket">
+                <property name="label" translatable="yes">Neues Paket erstellen</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="image">image3</property>
+                <property name="always-show-image">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="mainDualHeader">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkHeaderBar" id="mainDualHeaderDevice">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="title" translatable="yes">Gerät</property>
+                <property name="spacing">0</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHeaderBar" id="mainDualHeaderEntryDeviceNum">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="has-subtitle">False</property>
+                <property name="spacing">0</property>
+                <signal name="add" handler="on_mainDualHeaderEntryDeviceNum_add" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHeaderBar" id="mainDualHeaderPacket">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="title" translatable="yes">Paket</property>
+                <property name="spacing">0</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHeaderBar" id="mainDualHeaderEntryPacketNum">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="has-subtitle">False</property>
+                <property name="spacing">0</property>
+                <signal name="add" handler="on_mainDualHeaderEntryPacketNum_add" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="mainResponse">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="selectable">True</property>
+            <attributes>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="semilight"/>
+              <attribute name="size" value="20480"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="mainDeviceName">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="ellipsize">start</property>
+            <attributes>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="book"/>
+              <attribute name="size" value="14336"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">Bilder\yes.png</property>
+  </object>
+  <object class="GtkImage" id="image5">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">Bilder\no.png</property>
+  </object>
+  <object class="GtkWindow" id="window3">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Ende - AIRFreight</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center-always</property>
+    <property name="icon">Logo.png</property>
+    <property name="type-hint">notification</property>
+    <property name="urgency-hint">True</property>
+    <property name="accept-focus">False</property>
+    <signal name="destroy" handler="destroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="last">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar" id="lastHeaderInfo">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="title" translatable="yes">Scannen abgeschlossen</property>
+            <property name="subtitle" translatable="yes">Alle Seriennummern wurden erfasst</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHeaderBar" id="lastHeaderChoice">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="title" translatable="yes">Weitere Dateien scannen?</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="lastChoice">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkButton" id="lastChoiceContinue">
+                <property name="label" translatable="yes">Ja</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="image">image4</property>
+                <property name="always-show-image">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="lastChoiceDone">
+                <property name="label" translatable="yes">Nein</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="image">image5</property>
+                <property name="always-show-image">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
